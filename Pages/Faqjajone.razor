@@ -1,0 +1,13 @@
+﻿@page "/faqja"
+
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<h3>Faqja jone me tekst: @Tekst</h3>
+
+<QuickGrid Items="@people" class="table">
+    <PropertyColumn Property="@(p => p.Emri)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Email)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Mosha)" Sortable="true" />
+</QuickGrid>
+
+   

@@ -1,0 +1,17 @@
+﻿@inject NavigationManager _navManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@code{
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        
+        if (authenticationState?.User?.Identity?.IsAuthenticated == false)
+        {
+            var path = _navManager.BaseUri.EndsWith("/") ? $"{_navManager.BaseUri}login"
+                                                            : $"{_navManager.BaseUri}/login";
+            
+                _navManager.NavigateTo(path, true);
+        }
+    }
+}

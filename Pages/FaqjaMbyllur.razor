@@ -1,0 +1,9 @@
+﻿@page "/faqjambyllur"
+
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<QuickGrid Items="@people">
+    <PropertyColumn Property="@(p => p.Emri)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Email)" Sortable="true" />
+    <PropertyColumn Property="@(p => p.Mosha)" Sortable="true" />
+</QuickGrid>
