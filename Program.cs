@@ -21,6 +21,10 @@ builder.Services.AddAuthentication("Cookies").AddCookie(options =>
 {
     options.ExpireTimeSpan = TimeSpan.FromMinutes(120);
     options.SlidingExpiration = true;
+}).AddGoogle(options => 
+{
+    options.ClientId = "bllablla.apps.googleusercontent.com";
+    options.ClientSecret = "fjalkalimibllablla";
 });
 
 
